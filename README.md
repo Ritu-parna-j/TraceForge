@@ -1,69 +1,126 @@
-# TraceForge
+# TraceForge 🔍
 
-TraceForge is a beginner-friendly **offline PCAP analyzer**. It reads an existing packet-capture file and summarizes protocol counts, frequently seen IP addresses, and source/destination conversations.
+**An Offline PCAP Analyzer Built with Python**
 
-It does **not** sniff live network traffic or send packets.
+TraceForge is a beginner-friendly network traffic analysis tool that analyzes existing PCAP and PCAPNG files using Python and Scapy. It provides a clear summary of network protocols, frequently observed IP addresses, and source-destination conversations.
 
-## Features
+TraceForge works entirely with saved packet captures. It does not sniff live network traffic or transmit packets.
 
-- Reads `.pcap` and `.pcapng` capture files using Scapy
-- Counts TCP, UDP, DNS, other IP, and non-IP packets
-- Lists the most frequently seen IP addresses
-- Summarizes common source/destination conversations
-- Prints readable output or JSON
+## ✨ Features
 
-## Requirements
+- 📂 Supports `.pcap` and `.pcapng` capture files.
+- 📊 Counts TCP, UDP, DNS, other IP, and non-IP packets.
+- 🌐 Identifies frequently observed IP addresses.
+- 🔄 Summarizes source and destination conversations.
+- 📄 Generates readable terminal reports.
+- 🧾 Supports JSON output for structured analysis.
+- 🔒 Works offline with previously captured network traffic.
+
+## 🛠️ Technologies Used
 
 - Python 3.10+
 - Scapy
+- JSON
+- Python Unit Testing
 
-Install dependencies:
+## 📋 Requirements
 
-```bash
-python -m pip install -r requirements.txt
-```
+- Python 3.10 or later
+- Scapy
 
-## Usage
+## ⚙️ Installation
 
-Analyze a capture file:
-
-```bash
-python traceforge.py sample.pcap
-```
-
-Print JSON:
+**1. Clone the repository**
 
 ```bash
-python traceforge.py sample.pcap --json
+git clone https://github.com/Ritu-parna-j/TraceForge.git
 ```
 
-Use a capture file that you created yourself or one explicitly provided for training. If you do not have a PCAP yet, install Wireshark and create a short capture on your own device, or use an instructor-provided practice capture.
-
-## Run tests
+**2. Navigate to the project directory**
 
 ```bash
-python -m unittest discover -s tests -v
+cd TraceForge
 ```
 
-## How it works
+**3. Install dependencies**
 
-1. Scapy reads the saved capture file.
-2. TraceForge checks each packet for an IP layer.
-3. It counts TCP, UDP, and DNS layers when present.
-4. It records source/destination IP appearances and conversations.
-5. It prints a summary or JSON report.
+```bash
+python3 -m pip install -r requirements.txt
+```
 
-## Limitations
+## 🚀 Usage
 
-- This is a learning tool, not an intrusion detection system.
-- It does not determine whether traffic is malicious.
-- Host counts are packet appearances, not unique devices.
-- It only summarizes IP-based packets for host and conversation counts.
+**Analyze a PCAP file**
 
-## Responsible use
+```bash
+python3 traceforge.py sample.pcap
+```
 
-Analyze only packet captures you created yourself or are authorized to inspect. Captures can contain private information such as IP addresses, URLs, and unencrypted data. Do not publish sensitive captures or personal data.
+**Generate JSON output**
 
-## Learning goals
+```bash
+python3 traceforge.py sample.pcap --json
+```
 
-This project introduces PCAP files, packet layers, IP addresses, TCP/UDP, DNS, Python counters, third-party libraries, and JSON reports.
+Use a PCAP file that you created yourself or one explicitly provided for training. You can use Wireshark to create a packet capture on your own device.
+
+## 🧪 Run Tests
+
+Execute the unit tests using:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+## ⚙️ How It Works
+
+1. Scapy reads the saved packet capture file.
+2. TraceForge identifies packets containing an IP layer.
+3. It counts TCP, UDP, and DNS packets.
+4. It records IP address appearances and source-destination conversations.
+5. It generates a readable summary or JSON report.
+
+## ⚠️ Limitations
+
+- TraceForge is an educational tool, not an intrusion detection system.
+- It does not determine whether network traffic is malicious.
+- Host counts represent packet appearances, not unique devices.
+- Host and conversation summaries are limited to IP-based packets.
+
+## 🔐 Responsible Use
+
+TraceForge is intended for educational and authorized network analysis.
+
+- Analyze only packet captures you created or have permission to inspect.
+- Do not publish packet captures containing sensitive information.
+- Protect private IP addresses, URLs, and unencrypted data found in captures.
+
+## 🎯 Learning Objectives
+
+This project demonstrates practical concepts in:
+
+- Network traffic analysis
+- PCAP file processing
+- TCP, UDP, and DNS protocols
+- IP addressing and packet layers
+- Python data structures and counters
+- JSON report generation
+- Unit testing
+
+## 🔮 Future Improvements
+
+- Protocol distribution visualization.
+- Advanced packet filtering.
+- Exportable analysis reports.
+- Additional network traffic statistics.
+- Improved reporting and analysis features.
+
+## 👩‍💻 Author
+
+**Ritu Parna J**
+
+GitHub: [@Ritu-parna-j](https://github.com/Ritu-parna-j)
+
+---
+
+⭐ If you find TraceForge interesting, consider starring the repository!
