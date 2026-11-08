@@ -124,3 +124,12 @@ GitHub: [@Ritu-parna-j](https://github.com/Ritu-parna-j)
 ---
 
 ⭐ If you find TraceForge interesting, consider starring the repository!
+## 📸 Project Screenshots
+
+### Terminal Analysis Output
+
+![TraceForge Terminal Output](screenshots/terminal_output.png)
+
+### JSON Analysis Output
+
+![TraceForge JSON Output](screenshots/json-output.png)
